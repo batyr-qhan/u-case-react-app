@@ -19,8 +19,6 @@ interface Item {
 }
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   const [response, setResponse] = useState({} as Response);
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
