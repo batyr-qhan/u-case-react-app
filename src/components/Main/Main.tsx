@@ -21,7 +21,7 @@ const Main = ({ items, query, totalResults, isLoading }: MainProps) => {
       <div className="placeholderImageContainer">
         <img
           className="placeholderImage"
-          src="/placeholder-image.png"
+          src="/u-case-react-app/placeholder-image.png"
           alt="placeholder"
         />
       </div>

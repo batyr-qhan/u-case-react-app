@@ -21,7 +21,7 @@ const Header = ({ onQueryChange }: HeaderProps) => {
 
   return (
     <div className="header">
-      <img src="/logo.svg" alt="logo" />
+      <img src="/u-case-react-app/logo.svg" alt="logo" />
       <div className="inputContainer">
         <input
           type="text"
@@ -32,7 +32,7 @@ const Header = ({ onQueryChange }: HeaderProps) => {
       </div>
 
       <div className="profileName">
-        <img src="/User.svg" alt="search" />
+        <img src="/u-case-react-app/User.svg" alt="search" />
         <span>Your Name</span>
       </div>
     </div>
