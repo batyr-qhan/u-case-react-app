@@ -24,11 +24,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
+  const apiKey = import.meta.env.VITE_OMDB_API_KEY;
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=4a249f8d&s=${query}&page=${currentPage}`
+        `http://www.omdbapi.com/?apikey=${apiKey}&s=${query}&page=${currentPage}`
       );
       const data = await response.json();
       setResponse(data);
