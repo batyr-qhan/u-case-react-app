@@ -1,10 +1,40 @@
-// import "./Header.css";
+import { useEffect, useState } from "react";
+import "./Header.css";
 
-const Header = () => {
+interface HeaderProps {
+  onQueryChange: (newQuery: string) => void;
+}
+
+const Header = ({ onQueryChange }: HeaderProps) => {
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      onQueryChange(query);
+      // console.log('query changed')
+    }, 500);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [query, onQueryChange]);
+
   return (
     <div className="header">
-      <img src="../assets/logo.svg" alt="logo" />
-      <img src="/react.svg" alt="react logo" />
+      <img src="/logo.svg" alt="logo" />
+      <div className="inputContainer">
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={(e) => setQuery(e.target.value)}
+          className="searchInput"
+        />
+      </div>
+
+      <div className="profileName">
+        <img src="/User.svg" alt="search" />
+        <span>Your Name</span>
+      </div>
     </div>
   );
 };
